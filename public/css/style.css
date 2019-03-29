@@ -1,0 +1,95 @@
+.containerr {
+    width: 40%;
+}
+
+.addpost {
+    width: 40%; 
+    margin: 0 auto;
+}
+
+.editar {
+    width: 80%; 
+    margin: 0 0 3em auto;
+}
+
+.categorias {
+    width: 76%; 
+    margin: 0 auto;
+}
+
+.cat {
+    text-align: left;
+}
+
+.editcategorias {
+    width: 40%; 
+    margin: 0 auto;
+}
+
+.addcategorias {
+    width: 40%; 
+    margin: 0 auto;
+}
+
+.addcategorias {
+    width: 40%; 
+    margin: 0 auto;
+}
+
+.home {
+    width: 80%; 
+    margin: 0 auto;
+}
+
+.resumo {
+    width: 80%; 
+    margin: 0 auto;
+}
+
+.smallist {
+    width: 50%; 
+    margin: 0 auto;
+}
+
+.lista {
+    width: 40%; 
+    margin: 0 auto;
+}
+
+.registro {
+    width: 30%; 
+    margin: 0 auto;   
+}
+
+.postagem {
+    width: 30%;
+    font-size: 80%;
+    margin: 0 2em 2em 2em;
+}
+
+.table {
+    text-align: center;
+    width: 300%;
+    color: black;
+}
+
+.graficos {
+    width: 30%; 
+    margin: 0 2em 2em 2em;
+}
+
+
+@media (max-width: 1440px) {
+    .secundary {
+        display: none;
+ }
+}
+
+@media (max-width: 1440px) {
+    .postagem {
+        width: 95%;
+        margin: 0 2em 2em 2em;
+ }
+}
+
+

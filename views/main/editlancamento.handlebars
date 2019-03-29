@@ -1,0 +1,57 @@
+<div class="postagem">
+
+{{#each erros}}
+<div class="alert alert-danger">{{texto}}</div>
+{{else}}
+
+{{/each}}
+
+
+<div class="tabela">
+<table id="tabela" class="table table-hover mt-4">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Empresa</th>
+      <th scope="col">Fornecedor</th>
+      <th scope="col">Natureza</th>
+      <th scope="col">Tipo de OC</th>
+      <th scope="col">OC</th>
+      <th scope="col">NF/Invoice</th>
+      <th scope="col">Valor</th>
+      <th scope="col">Emissão</th>
+      <th scope="col">Competência</th>
+      <th scope="col">Justificativa</th>
+      <th scope="col">Centro de Custo</th>
+      <th scope="col">Únidade de Negócio</th>
+      <th scope="col">Prazo</th>
+      <th scope="col">Vencimento</th>
+      <th scope="col">Data de envio para pagamento</th>
+      <th scope="col">Data de recebimento</th>
+      <th scope="col">Responsável</th>
+      <th scope="col">N do Ticket</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+    <tbody>
+    <tr class="base">
+      <td><input type="text" value="{{lancamentos.empresa}}"></td>
+      <td><input type="text" value="{{lancamentos.fornecedor}}"></td>
+      <td><input type="text" value="{{lancamentos.natureza}}"></td>
+      <td><input type="text" value="{{lancamentos.tipo}}"></td>
+      <td><input type="text" value="{{lancamentos.ordem}}"></td>
+      <td><input type="text" value="{{lancamentos.nota}}"></td>
+      <td><input type="text" value="{{lancamentos.valor}}"></td>
+      <td class="trocar"><input type="text" value="{{lancamentos.emissao}}"></td>
+      <td><input type="text" value="{{lancamentos.competencia}}"></td>
+      <td><input type="text" value="{{lancamentos.justificativa}}"></td>
+      <td><input type="text" value="{{lancamentos.centro}}"></td>
+      <td><input type="text" value="{{lancamentos.unidade}}"></td>
+      <td><input type="text" value="{{lancamentos.prazo}}"></td>
+      <td><input type="text" value="{{lancamentos.vencimento}}"></td>
+      <td><input type="text" value="{{lancamentos.date}}"></td>
+      <td><input type="text" value="{{lancamentos.recebimento}}"></td>
+      <td><input type="text" value="{{lancamentos.responsavel}}"></td>
+      <td><input type="text" value="{{lancamentos.ticket}}"></td>
+      <td>

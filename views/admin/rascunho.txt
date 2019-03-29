@@ -1,0 +1,31 @@
+
+
+<h2>Lista de itens do oracle </h2>
+<hr>
+
+<a href="/admin/addcategorias"><button class="btn btn-success" >Novo cadastro</button></a>
+<div class="categorias">
+{{#each naturezas}}
+<div class="row">
+        <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+            <h4>{{nome}}</h4>
+            <small>{{area}}</small><br>
+            <a href="categorias/editar/{{_id}}"><button class="btn btn-success mt-4">Editar</button></a>
+            <form action="/admin/categorias/remove" method="POST">
+            <input type="hidden" name="id" value="{{_id}}">
+            <button type="submit" class="btn btn-danger mt-3">Remover</button>
+        </form>
+        </div>
+    </div>
+    </div>
+    </div>
+    
+
+{{else}}
+
+<h4 class="mt-3">Nenhum item registrado</h4>
+{{/each}}
+
+</div>

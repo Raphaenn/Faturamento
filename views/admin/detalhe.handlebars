@@ -1,0 +1,141 @@
+<h1 class="legenda">Detalhe Fornecedor</h1>
+<hr>
+<br>
+
+<header class="postagem">
+
+<div class="tabela">
+<table id="Fat_table" class="display">
+  <thead class="thead-dark">
+    <tr class="cabecalho">
+      <th scope="col">Empresa</th>
+      <th scope="col">Fornecedor</th>
+      <th scope="col">Natureza</th>
+      <th scope="col">Tipo de OC</th>
+      <th scope="col">OC</th>
+      <th scope="col">NF/Invoice</th>
+      <th scope="col">Valor</th>
+      <th scope="col">Emissão</th>
+      <th scope="col">Competência</th>
+      <th scope="col">Justificativa</th>
+      <th scope="col">Centro de Custo</th>
+      <th scope="col">Únidade de Negócio</th>
+      <th scope="col">Prazo</th>
+      <th scope="col">Vencimento</th>
+      <th scope="col">Data de envio para pagamento</th>
+      <th scope="col">Data de recebimento</th>
+      <th scope="col">Responsável</th>
+      <th scope="col">Nº do Ticket</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+    <tbody>
+
+{{#each lancamentos}}
+
+
+    <tr class="base">
+      <td>{{empresa}}</td>
+      <td>{{fornecedor.nome}}</td>
+      <td>{{natureza.nome}}</td>
+      <td>{{tipo}}</td>
+      <td>{{ordem}}</td>
+      <td>{{nota}}</td>
+      <td>{{valor}}</td>
+      <td>{{dateFormat emissao "DD/MM/YYYY"}}</td>
+      <td>{{competencia}}</td>
+      <td>{{justificativa}}</td>
+      <td>{{centro}}</td>
+      <td>{{unidade}}</td>
+      <td>{{prazo}}</td>
+      <td>{{dateFormat vencimento "DD/MM/YYYY"}}</td>
+      <td>{{dateFormat date "DD/MM/YYYY"}}</td>
+      <td>{{dateFormat recebimento "DD/MM/YYYY"}}</td>
+      <td>{{responsavel}}</td>
+      <td>{{ticket}}</td>
+      <td>
+        <a href="/base/lancamento/editar/{{_id}}"><button class="btn btn-success">Editar</button></a>
+       </td>
+       <td>   
+          <form action="/base/geral/remover" method="POST">
+                <input type="hidden" name="id" value="{{_id}}">
+        <button type="submit" class="btn btn-danger">Excluir</button>
+        </form>
+      </td>
+    </tr>
+
+
+
+{{else}}
+
+<header class="postagem">
+<h5>Nenhum lançamento cadastrado</h5>
+<hr>
+
+{{/each}}
+
+<script src="/js/funcoes.js"></script>
+
+
+<script>
+
+  $(document).ready( function () {
+    $('#Fat_table').DataTable();
+});
+
+</script>
+
+
+</tbody>
+</table>
+</div>
+</header>
+
+
+<section class="graficos">
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+<canvas id="myChart" width="400" height="400"></canvas>
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+        datasets: [{
+            label: 'Total de notas envidas (R$)',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+</section>

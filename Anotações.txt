@@ -1,0 +1,51 @@
+Modulos Instalados
+
+npm install Express = Coração do projeto npm install --save express
+
+npm install handlebars = framework de visualização + npm install --save express-handlebars
+
+body-parser = framework de visualização + npm install --save body-parser
+
+mongoose = Database + npm install --save mongoose
+ 
+npm install = sem isso não roda
+
+npm nodemon = atualizar servidor em real time + npm install nodemon -g
+
+npm install --save express-session = trabalhar com sessões 
+
+npm install --save connect-flash = trabalhar com sessões
+
+npm install ejs@0.8 --save - instalar o ejs quando necessário
+
+// Populate carrega as informações da categoria atrelada as postagens 
+
+
+// Explicações 
+
+app.use = middwares 
+
+
+
+
+GRUPO DE ROTAS 
+
+// Chama a rota post '/post' é um prefixo qualquer ; ,post carrega a const posta que recebe o arquivo da pasta post
+app.use('/post', post)
+
+res.redirect("/admin/categorias") - primeiro o prefixo e depois o nome dado a router.get
+res.redirect("/base/geral");
+
+res.render("main/tabela") - Primeiro a pasta e depois o nome do arquivo
+
+.sort({nome:"asc"}) -- Define a ordem de exibição de um conteúdo. No caso aqui, seria a ordem alfábética dos nomes
+
+
+-------PARA PEGAR O NOME DE UM CAMPO DE OUTRA BASE, PRECISO POR O POPULATE--------
+router.get("/geral", function(req, res) {
+    Lancamento.find().populate("natureza").sort({fornecedor:"asc"}).then((lancamentos) => {
+
+
+-------PARA PEGAR SALVAR O NOME/VALOR DE UMA CHECK BOX --------
+Value:"Nome que você quer pegar 1"
+Value:"Nome que você quer pegar 2"

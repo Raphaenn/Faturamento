@@ -1,0 +1,24 @@
+{
+  "name": "faturamento",
+  "version": "1.0.0",
+  "description": "Painel de faturamento Online",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "handlebars-dateformat": "^1.1.1",
+    "moment": "^2.24.0",
+    "mongoose": "^5.4.8",
+    "nodemon": "^1.18.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "Raphael Neves",
+  "license": "ISC"
+}

@@ -1,21 +1,131 @@
-<table id="id_tabela" class="display">
+<div class="postagem">
+	<table id="somas" class="display nowrap" cellspacing="0" width="100%">
     <thead>
         <tr>
-            <th>Column 1</th>
-            <th>Column 2</th>
+            <th>Subject</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Row 1 Data 1</td>
-            <td>Row 1 Data 2</td>
+        <tr role="row" class="odd">
+            <td class="sorting_1">Astrophysics</td>
+            <td>20</td>
+            <td>43</td>
+            <td>12</td>
+            <td>54</td>
+            <td>100</td>
         </tr>
-        <tr>
-            <td>Row 2 Data 1</td>
-            <td>Row 2 Data 2</td>
+        <tr role="row" class="even">
+            <td class="sorting_1">Computer Sciences</td>
+            <td>46</td>
+            <td>45</td>
+            <td>42</td>
+            <td>45</td>
+            <td>100</td>
+        </tr>
+        <tr role="row" class="odd">
+            <td class="sorting_1">Mathematics</td>
+            <td>45</td>
+            <td>41</td>
+            <td>45</td>
+            <td>44</td>
+            <td>100</td>
+        </tr>
+        <tr role="row" class="even">
+            <td class="sorting_1">Molecular Science</td>
+            <td>46</td>
+            <td>44</td>
+            <td>46</td>
+            <td>43</td>
+            <td>100</td>
+        </tr>
+        <tr role="row" class="odd">
+            <td class="sorting_1">Physics</td>
+            <td>43</td>
+            <td>46</td>
+            <td>43</td>
+            <td>46</td>
+            <td>100</td>
         </tr>
     </tbody>
+    <tfoot align="right">
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </tfoot>
 </table>
+<script>
+
+$(document).ready(function() {
+    $('#somas').dataTable({
+    	"footerCallback": function ( row, data, start, end, display ) {
+            var api = this.api(), data;
+
+            // Remove the formatting to get integer data for summation
+            var intVal = function ( i ) {
+                return typeof i === 'string' ?
+                    i.replace(/[\$,]/g, '')*1 :
+                    typeof i === 'number' ?
+                        i : 0;
+            };
+
+            // Total over all pages
+            var monTotal = api
+                .column( 1 )
+                .data()
+                .reduce( function (a, b) {
+                    return intVal(a) + intVal(b);
+                }, 0 );
+
+			 var tueTotal = api
+                .column( 2 )
+                .data()
+                .reduce( function (a, b) {
+                    return intVal(a) + intVal(b);
+                }, 0 );
+
+			 var wedTotal = api
+                .column( 3 )
+                .data()
+                .reduce( function (a, b) {
+                    return intVal(a) + intVal(b);
+                }, 0 );
+
+			 var thuTotal = api
+                .column( 4 )
+                .data()
+                .reduce( function (a, b) {
+                    return intVal(a) + intVal(b);
+                }, 0 );
+
+			 var friTotal = api
+                .column( 5 )
+                .data()
+                .reduce( function (a, b) {
+                    return intVal(a) + intVal(b);
+                }, 0 );
+
+
+            // Update footer
+			$( api.column( 0 ).footer() ).html('Total');
+            $( api.column( 1 ).footer() ).html(monTotal);
+            $( api.column( 2 ).footer() ).html(tueTotal);
+            $( api.column( 3 ).footer() ).html(wedTotal);
+            $( api.column( 4 ).footer() ).html(thuTotal);
+            $( api.column( 5 ).footer() ).html(friTotal);
+        }
+    } );
+} );
+</script>
 
 
 <script>
@@ -25,3 +135,5 @@ $(document).ready( function () {
 } );
 
 </script>
+
+</div>

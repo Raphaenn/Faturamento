@@ -11,20 +11,20 @@
       <th scope="col">Empresa</th>
       <th scope="col">Fornecedor</th>
       <th scope="col">Natureza</th>
-      <th scope="col">Tipo de OC</th>
+      <th class="secundary" scope="col">Tipo de OC</th>
       <th scope="col">OC</th>
       <th scope="col">NF/Invoice</th>
       <th scope="col">Valor</th>
       <th scope="col">Emissão</th>
-      <th scope="col">Competência</th>
+      <th class="secundary" scope="col">Competência</th>
       <th scope="col">Justificativa</th>
-      <th scope="col">Centro de Custo</th>
-      <th scope="col">Únidade de Negócio</th>
-      <th scope="col">Prazo</th>
+      <th class="secundary" scope="col">Centro de Custo</th>
+      <th class="secundary" scope="col">Únidade de Negócio</th>
+      <th class="secundary" scope="col">Prazo</th>
       <th scope="col">Vencimento</th>
       <th scope="col">Data de envio para pagamento</th>
-      <th scope="col">Data de recebimento</th>
-      <th scope="col">Responsável</th>
+      <th class="secundary" scope="col">Data de recebimento</th>
+      <th class="secundary" scope="col">Responsável</th>
       <th scope="col">Nº do Ticket</th>
       <th></th>
       <th></th>
@@ -39,28 +39,28 @@
       <td>{{empresa}}</td>
       <td>{{fornecedor.nome}}</td>
       <td>{{natureza.nome}}</td>
-      <td>{{tipo}}</td>
+      <td class="secundary">{{tipo}}</td>
       <td>{{ordem}}</td>
       <td>{{nota}}</td>
-      <td>{{valor}}</td>
+      <td class="coin">{{valor}}</td>
       <td>{{dateFormat emissao "DD/MM/YYYY"}}</td>
-      <td>{{competencia}}</td>
+      <td class="secundary">{{competencia}}</td>
       <td>{{justificativa}}</td>
-      <td>{{centro}}</td>
-      <td>{{unidade}}</td>
-      <td>{{prazo}}</td>
+      <td class="secundary">{{centro}}</td>
+      <td class="secundary">{{unidade}}</td>
+      <td class="secundary">{{prazo}}</td>
       <td>{{dateFormat vencimento "DD/MM/YYYY"}}</td>
       <td>{{dateFormat date "DD/MM/YYYY"}}</td>
-      <td>{{dateFormat recebimento "DD/MM/YYYY"}}</td>
-      <td>{{responsavel}}</td>
+      <td class="secundary">{{dateFormat recebimento "DD/MM/YYYY"}}</td>
+      <td class="secundary">{{responsavel}}</td>
       <td>{{ticket}}</td>
       <td>
-        <a href="/base/lancamento/editar/{{_id}}"><button class="btn btn-success">Editar</button></a>
+        <a href="/base/lancamento/editar/{{_id}}"><button class="btn btn-success"><i class="icon ion-md-create"></i></button></a>
        </td>
        <td>   
           <form action="/base/geral/remover" method="POST">
                 <input type="hidden" name="id" value="{{_id}}">
-        <button type="submit" class="btn btn-danger">Excluir</button>
+        <button type="submit" class="btn btn-danger"><i class="icon ion-md-trash"></i></button>
         </form>
       </td>
     </tr>
@@ -92,10 +92,31 @@
 </div>
 </header>
 
+<!-- SEGUNDA PARTE DO DASHBOARD ********************************************************************************-->
+<section class="secao">
 
-<section class="graficos">
+<br>
+
+<div class="row">
+<div class="col">
+<div class="categorias">
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Valor total faturado</h5>
+    <p class="card-text" id="dinheiro"></p>
+  </div>
+</div>
+
+<br>
+</div>
+</div>
 
 
+<div class="col">
+<div class="graficos">
+
+<!-- GRÁFICOS DO CHART JS ******************************************************************************** -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
 <canvas id="myChart" width="400" height="400"></canvas>
@@ -138,4 +159,13 @@ var myChart = new Chart(ctx, {
     }
 });
 </script>
+
+<script src="/js/funcoes.js"></script>
+
+
+</div>
+</div>
+</div>
+
+
 </section>

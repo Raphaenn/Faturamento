@@ -74,8 +74,14 @@
 }
 
 .graficos {
-    width: 30%; 
+    width: 50%; 
     margin: 0 2em 2em 2em;
+    background-color: white;
+    border-radius: .4em;
+}
+
+.secao {
+    background-color: rgba(197,202,233 ,0.3);
 }
 
 

@@ -23,10 +23,14 @@
     <li class="list-group-item">Janeiro: 01/01/2019</li>
     <li class="list-group-item">Dezembro: 30/12/2019</li>
   </ul>
-  <div class="card-body">
-    <a href="/admin/fornecedores/{{nome}}" class="card-link">Detalhe</a>
-    <a href="#" class="card-link">Base</a>
+  <div class="d-flex justify-content-between align-items-center">
+    <a href="/admin/fornecedores/{{nome}}" class="card-link" style="margin-left: 4em;"><button class="btn btn-info">Detalhe</button></a>
+    <form action="/admin/fornecedor/remove" method="POST">
+      <input type="hidden" name="id" value="{{_id}}">
+      <button type="submit" class="btn btn-danger mb-2 mt-2" style="margin-right: 2em;">Excluir <i class="icon ion-md-trash"></i></button>
+    </form>
   </div>
+
 </div>
 </div>
 

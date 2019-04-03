@@ -159,7 +159,7 @@ router.get("/fornecedores/:nome", function(req, res) {
 })
 
 
-// Carregar fornulario de add fornecedor
+// Carregar formulario de add fornecedor
 router.get("/addfornecedor", function(req, res) {
     res.render("admin/addfornecedor")
 })
@@ -199,6 +199,16 @@ router.post("/fornecedor/novo", function(req, res){
     }
 
 
+})
+
+// Rota para excluir fornecedor 
+router.post("/fornecedor/remove", function(req, res){
+    Fornecedor.remove({_id: req.body.id}).then(() =>{
+        req.flash("success_msg", "Fornecedor excluido")
+        res.redirect("/admin/fornecedores");
+    }).catch((err) => {
+        req.flash("error_msg", "Erro ao tentar remover fornecedor")
+    })
 })
 
 

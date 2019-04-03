@@ -73,16 +73,27 @@
     color: black;
 }
 
+.card-aviso {
+    width: 76%; 
+    margin: 0 1em 1em 2em;
+}
+
+.aviso {
+    width: 40%; 
+    margin-top: 2em;
+}
+
 .graficos {
     width: 50%; 
     margin: 0 2em 2em 2em;
-    background-color: white;
+    border: solid 0.1em rgba(197,202,233 ,0.3);
     border-radius: .4em;
 }
 
+/*
 .secao {
     background-color: rgba(197,202,233 ,0.3);
-}
+} */
 
 
 @media (max-width: 1440px) {

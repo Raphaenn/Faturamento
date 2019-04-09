@@ -90,29 +90,155 @@
 </tbody>
 </table>
 </div>
+<hr>
 </header>
 
 <!-- SEGUNDA PARTE DO DASHBOARD ********************************************************************************-->
-<section class="secao">
+<section class="secao" style="background-color: #e1e1ef;">
 
 <br>
 
-<div class="row">
-<div class="col">
-<div class="card-aviso">
+
+<!-- Divisão das colunas onde ficarão as informações dos fornecedores-->
+<div class="sec2">
+  <div class="row mt-4">
+
+<div class="separador">
+    <div class="col"><h3 class="fornecedor">Algar</h3>
+    <hr>
+    <h5><i class="icon ion-md-square" style="color: rgb(22, 92, 22)"></i> Algar Telecom S.A</h5>
+    <P class="mt-3"><i class="icon ion-md-square" style="color: rgb(0, 109, 128)"></i> CNPJ: 934328429612319</P>
+    <P><i class="icon ion-md-at"></i><a href="mailto:raphaelnn@hotmail.com"> Email: raphaelnn@hotmail.com</a></P>
+    <P class="mt-3"><i class="icon ion-md-contact" style="color: rgb(0, 109, 128)"></i> Responsável: Lucas Rodrigues</P>
+    <p class="p-3 mb-2 bg-success text-white" style="border-radius: .2em; text-align: center;">Serviço ativo</p>
+
+    </div>
+</div>
+
+<div class="separador">
+    <div class="col">
+<!-- Card com soma de valores enviados-->
+<h3 class="fornecedor">Dados financeiros</h3>
+<hr>
+
+<div class="card flex-fill">
+		<div class="card-body py-4">
+			<div class="media">
+				<div class="d-inline-block mt-2 mr-3">
+					<i class="feather-lg text-info" data-feather="dollar-sign"></i>
+				</div>
+					<div class="media-body">
+						<h3 class="card-text" id="dinheiro"></h3>
+						<div class="sub-valores mb-0">Valor faturado</div>
+					</div>
+			</div>
+		</div>
+
+<script>
+  feather.replace()
+</script>
+</div>
+<!-- Fim da caixa de soma de valores enviados-->
+    </div>
+</div>
+   <!-- <div class="w-100"></div>   ACRESCENTAR CASO QUERIA QUEBRAR OS CARDS EM DUAS LINHAS-->
 
 
-<div class="card text-white bg-success mb-3" style="width: 13rem;">
-  <div class="card-body">
-    <h5 class="card-title">Valor total enviado</h5>
-    <p class="card-text" id="dinheiro"></p>
+<div class="separador">
+    <div class="col">
+
+<!-- ******************************************************************************************************-->
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <h1>Titulo 1</h1>
+    </div>
+    <div class="carousel-item">
+      <h1>Titulo 2</h1>
+    </div>
+    <div class="carousel-item">
+      <h1>Titulo 3</h1>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<!-- ******************************************************************************************************-->
+    </div>
+</div>
+
+
+<div class="separador">
+    <div class="col">
+      <div class="col"><h4 class="fornecedor">Últimos lançamentos</h4>
+    <hr>
+
+  <div class="card flex-fill">
+								<div class="card-body py-4">
+									<div class="media">
+										<div class="d-inline-block mt-2 mr-3">
+											<i class="feather-lg text-info" data-feather="dollar-sign"></i>
+										</div>
+										<div class="media-body">
+											<h3 class="mb-2">43</h3>
+											<div class="mb-0">Pending Orders</div>
+										</div>
+									</div>
+								</div>
+
+<script>
+  feather.replace()
+</script>
+
   </div>
 </div>
 
+</div>
+</div>
 <br>
-</div>
-</div>
 
+
+<script src="/js/funcoes.js"></script>
+</section>
+
+<!--
+        <h5>Razão Social</h5> 
+        <h5>CNPJ</h5>
+        Nome Fantasia
+        Empresa do Grupo **
+        Intermedidor **
+        Fabricante **
+        Produto **
+        Centro de Custo
+        Conta Contábil
+        Responsável da ferramenta**
+        Líder de Centro de Custo
+        Gestor da entidade
+        Recorrência valor
+        Periodicidade TEMPO
+        Forma de capitação de NF
+        Valor
+        Vencimento
+        Data de Faturamento
+        Moeda
+        Via de Pagamento
+        Escritório
+        Status
+        Data de checagem
+        ITEM
+
+-->
 
 <!-- GRÁFICOS DO CHART JS ******************************************************************************** 
 <div class="col">
@@ -162,12 +288,3 @@ var myChart = new Chart(ctx, {
 
 -->
 
-<script src="/js/funcoes.js"></script>
-
-
-</div>
-</div>
-</div>
-
-
-</section>

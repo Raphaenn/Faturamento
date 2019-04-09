@@ -6,13 +6,12 @@ var table = document.getElementById("Fat_table"), sumVal = 0;
     sumVal = sumVal + parseInt(table.rows[i].cells[6].innerHTML);
   }
 
-document.getElementById("dinheiro").innerHTML = "R$"+sumVal;
+document.getElementById("dinheiro").innerHTML = "R$ "+sumVal;
 
 
-// Função para calculo do imc - Teste de funções
+// Calendário 
 
-var legenda = document.querySelector(".legenda");
-legenda.textContent = "Painel de faturamento - 2019";
+
 
 
 //Modificar datas @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

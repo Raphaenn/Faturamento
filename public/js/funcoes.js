@@ -13,7 +13,6 @@ document.getElementById("dinheiro").innerHTML = "R$ "+sumVal;
 
 
 
-
 //Modificar datas @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 /*

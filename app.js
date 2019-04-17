@@ -19,7 +19,7 @@ var hbs = require('handlebars'); // conectart para formatar datas
 
 //Mongoose configuracao
 mongoose.Promise = global.Promise; //Padrão
-mongoose.connect("mongodb://localhost/finance").then(() => {
+mongoose.connect("mongodb+srv://finance:321993@finance-wjml9.mongodb.net/test?retryWrites=true").then(() => {
     console.log("Conectado ao mongo");
 }).catch((err) => {
     console.log("Erro ao conectar ao mongo"+err);

@@ -1,139 +1,59 @@
-<div class="postagem">
-	<table id="somas" class="display nowrap" cellspacing="0" width="100%">
-    <thead>
-        <tr>
-            <th>Subject</th>
-            <th>Mon</th>
-            <th>Tue</th>
-            <th>Wed</th>
-            <th>Thu</th>
-            <th>Fri</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr role="row" class="odd">
-            <td class="sorting_1">Astrophysics</td>
-            <td>20</td>
-            <td>43</td>
-            <td>12</td>
-            <td>54</td>
-            <td>100</td>
-        </tr>
-        <tr role="row" class="even">
-            <td class="sorting_1">Computer Sciences</td>
-            <td>46</td>
-            <td>45</td>
-            <td>42</td>
-            <td>45</td>
-            <td>100</td>
-        </tr>
-        <tr role="row" class="odd">
-            <td class="sorting_1">Mathematics</td>
-            <td>45</td>
-            <td>41</td>
-            <td>45</td>
-            <td>44</td>
-            <td>100</td>
-        </tr>
-        <tr role="row" class="even">
-            <td class="sorting_1">Molecular Science</td>
-            <td>46</td>
-            <td>44</td>
-            <td>46</td>
-            <td>43</td>
-            <td>100</td>
-        </tr>
-        <tr role="row" class="odd">
-            <td class="sorting_1">Physics</td>
-            <td>43</td>
-            <td>46</td>
-            <td>43</td>
-            <td>46</td>
-            <td>100</td>
-        </tr>
-    </tbody>
-    <tfoot align="right">
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-    </tfoot>
-</table>
+{{#each lancamentos}}
+
+  <div class="col">
+<div class="graficos">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+<canvas id="myChart" width="400" height="400"></canvas>
 <script>
-
-$(document).ready(function() {
-    $('#somas').dataTable({
-    	"footerCallback": function ( row, data, start, end, display ) {
-            var api = this.api(), data;
-
-            // Remove the formatting to get integer data for summation
-            var intVal = function ( i ) {
-                return typeof i === 'string' ?
-                    i.replace(/[\$,]/g, '')*1 :
-                    typeof i === 'number' ?
-                        i : 0;
-            };
-
-            // Total over all pages
-            var monTotal = api
-                .column( 1 )
-                .data()
-                .reduce( function (a, b) {
-                    return intVal(a) + intVal(b);
-                }, 0 );
-
-			 var tueTotal = api
-                .column( 2 )
-                .data()
-                .reduce( function (a, b) {
-                    return intVal(a) + intVal(b);
-                }, 0 );
-
-			 var wedTotal = api
-                .column( 3 )
-                .data()
-                .reduce( function (a, b) {
-                    return intVal(a) + intVal(b);
-                }, 0 );
-
-			 var thuTotal = api
-                .column( 4 )
-                .data()
-                .reduce( function (a, b) {
-                    return intVal(a) + intVal(b);
-                }, 0 );
-
-			 var friTotal = api
-                .column( 5 )
-                .data()
-                .reduce( function (a, b) {
-                    return intVal(a) + intVal(b);
-                }, 0 );
-
-
-            // Update footer
-			$( api.column( 0 ).footer() ).html('Total');
-            $( api.column( 1 ).footer() ).html(monTotal);
-            $( api.column( 2 ).footer() ).html(tueTotal);
-            $( api.column( 3 ).footer() ).html(wedTotal);
-            $( api.column( 4 ).footer() ).html(thuTotal);
-            $( api.column( 5 ).footer() ).html(friTotal);
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Jan', 'Fev', 'Mar',],
+        datasets: [{
+            label: 'Total de notas envidas (R$)',
+            data: [lancamento.valor],
+            backgroundColor: [
+                'rgba(255, 99, 132)',
+                'rgba(54, 162, 235)',
+                'rgba(255, 206, 86)',
+                'rgba(75, 192, 192)',
+                'rgba(153, 102, 255)',
+                'rgba(255, 159, 64)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
         }
-    } );
-} );
+    }
+});
 </script>
 
-
-<script>
-
-$(document).ready( function () {
-    $('#id_tabela').DataTable();
-} );
-
-</script>
 
 </div>
+
+</div>
+
+{{else}}
+
+<header class="postagem">
+<h5>Nenhum lançamento cadastrado</h5>
+<hr>
+
+{{/each}}

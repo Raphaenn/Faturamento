@@ -104,7 +104,7 @@
   <div class="row mt-4">
 
 <div class="separador">
-    <div class="col"><h3 class="fornecedor">Algar</h3>
+    <div class="col"><h3 class="fornecedor">{{fornecedor.nome}}</h3>
     <hr>
     <h5><i class="icon ion-md-square" style="color: rgb(22, 92, 22)"></i> Algar Telecom S.A</h5>
     <P class="mt-3"><i class="icon ion-md-square" style="color: rgb(0, 109, 128)"></i> CNPJ: 934328429612319</P>
@@ -129,7 +129,7 @@
 				</div>
 					<div class="media-body">
 						<h3 class="card-text" id="dinheiro"></h3>
-						<div class="sub-valores mb-0">Valor faturado</div>
+						<div class="sub-valores mb-0">Total faturado</div>
 					</div>
 			</div>
 		</div>
@@ -157,12 +157,15 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <h1>Titulo 1</h1>
+      <!-- Calendário entra aqui-->
     </div>
     <div class="carousel-item">
       <h1>Titulo 2</h1>
+      <!-- Resumo entra aqui-->
     </div>
     <div class="carousel-item">
       <h1>Titulo 3</h1>
+      <!-- Espaço vago entra aqui-->
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -184,33 +187,58 @@
       <div class="col"><h4 class="fornecedor">Últimos lançamentos</h4>
     <hr>
 
-  <div class="card flex-fill">
-								<div class="card-body py-4">
-									<div class="media">
-										<div class="d-inline-block mt-2 mr-3">
-											<i class="feather-lg text-info" data-feather="dollar-sign"></i>
-										</div>
-										<div class="media-body">
-											<h3 class="mb-2">43</h3>
-											<div class="mb-0">Pending Orders</div>
-										</div>
-									</div>
-								</div>
+  
+  <div class="col">
+<div class="graficos">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
+<canvas id="bar-chart" width="400" height="400"></canvas>
 <script>
-  feather.replace()
+new Chart(document.getElementById("bar-chart"), {
+    type: 'bar',
+    data: {
+      labels: ["Jan", "Fev", "Mar", "Abr", "Mai"],
+      datasets: [
+        {
+          label: "Population (millions)",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: [2478,5267,734,784,433]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Predicted world population (millions) in 2050'
+      }
+    }
+});
 </script>
 
-  </div>
+
 </div>
 
 </div>
 </div>
-<br>
-
 
 <script src="/js/funcoes.js"></script>
 </section>
+
+<footer class="rodape">
+  <div class="container-fluid">
+    <div class="text-muted row">
+      <div class="text-left col-6">
+        <ul class="list-inline">
+          <li class="list-inline-item">It finance</li>
+          <li class="list-inline-item">Suporte</li>
+          <li class="list-inline-item">Contato</li>
+          <li class="list-inline-item">Termos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
 
 <!--
         <h5>Razão Social</h5> 

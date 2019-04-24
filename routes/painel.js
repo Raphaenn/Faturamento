@@ -18,7 +18,7 @@ router.get("/geral", function(req, res) {
     })
 });
 
-// Rota para carregar formulário de envio -- Propriedade sort definie como será organiada a base, por ordem alfabética, data e etc. 
+// Rota para carregar formulário de envio -- Propriedade sort definie como será organizada a base, por ordem alfabética, data e etc. 
 router.get("/enviar", function(req, res) {
     Natureza.find().populate("naturezas").sort({nome:"asc"}).then((naturezas) =>{
         Fornecedor.find().populate("fornecedores").then((fornecedores)=>{
@@ -107,8 +107,14 @@ router.get("/lancamento/editar/:id", function(req, res){
 
 // Rota de teste
 router.get("/teste", function(req, res) {
-    res.render("main/teste");
+    Lancamento.find().populate("fornecedor").populate("natureza").sort({fornecedor:"asc"}).then((lancamentos) => {
+        res.render("main/teste", {lancamentos: lancamentos})
+    }).catch((err) => {
+        req.flash("error_msg", "Erro ao carregar teste")
+        res.redirect("/base/geral")
+    })
 });
+
 
 
 module.exports = router;

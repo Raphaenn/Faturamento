@@ -1,26 +1,92 @@
-{{#each lancamentos}}
+<div class="teste">
+<table id="Det_Table" class="table">
+    <tr>
+        <th>Property</th>
+        <th>France</th>
+        <th>Germany</th>
+        <th>Italy</th>
+        <th>UK</th>
+        <th>Es</th>
+        <th>Pt</th>
+    </tr>
+    <tr>
+        <th>Coastline</th>
+        <td>40</td>
+        <td>22</td>
+        <td>70</td>
+        <td>40.5</td>
+        <td>40.5</td>
+        <td>12</td>
+    </tr>
+    <tr>
+        <th>Expectancy</th>
+        <td>81.8</td>
+        <td>80.7</td>
+        <td>82.2</td>
+        <td>80.7</td>
+        <td>40.5</td>
+        <td>22</td>
+    </tr>
+    <tr>
+        <th>Elevation</th>
+        <td>60</td>
+        <td>50</td>
+        <td>34</td>
+        <td>70</td>
+        <td>40.5</td>
+        <td>90</td>
+    </tr>
+    <tr>
+        <th>Population</th>
+        <td>66</td>
+        <td>80</td>
+        <td>62</td>
+        <td>64</td>
+        <td>40.5</td>
+        <td>22</td>
+    </tr>
+    <tr>
+        <th>Age</th>
+        <td>41.2</td>
+        <td>46.8</td>
+        <td>45.1</td>
+        <td>40.5</td>
+        <td>40.5</td>
+        <td>22</td>
+    </tr>
+</table>
+</div>
 
-  <div class="col">
-<div class="graficos">
+
+<div class="graficos2">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
-<canvas id="myChart" width="400" height="400"></canvas>
-<script>
-var ctx = document.getElementById('myChart').getContext('2d');
+<canvas id="myChart" width="400" height="200"></canvas>
+<script>   
+    var table = document.querySelector('Table')
+    var tableArr = [];
+    var tableLab = [];
+
+    for(var i = 1; i < table.rows.length; i++) {
+        tableArr.push([
+     table.rows[i].cells[1].innerHTML
+    ]);
+    }
+
+var ctx = document.getElementById('myChart');
 var myChart = new Chart(ctx, {
-    type: 'doughnut',
+    type: 'bar',
     data: {
-        labels: ['Jan', 'Fev', 'Mar',],
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'],
         datasets: [{
-            label: 'Total de notas envidas (R$)',
-            data: [lancamento.valor],
+            label: 'France',
+            data: tableArr,
             backgroundColor: [
                 'rgba(255, 99, 132)',
                 'rgba(54, 162, 235)',
                 'rgba(255, 206, 86)',
                 'rgba(75, 192, 192)',
                 'rgba(153, 102, 255)',
-                'rgba(255, 159, 64)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',
@@ -28,7 +94,6 @@ var myChart = new Chart(ctx, {
                 'rgba(255, 206, 86, 1)',
                 'rgba(75, 192, 192, 1)',
                 'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
             ],
             borderWidth: 1
         }]
@@ -45,15 +110,41 @@ var myChart = new Chart(ctx, {
 });
 </script>
 
-
 </div>
 
-</div>
+<br>
+<br>
+<br>
+
+<div class="postagem">
+
+<div class="tabela">
+<table id="Fat_table"  class="display">
+  <thead class="thead-dark">
+    <tr class="cabecalho">
+      <th scope="col">Empresa</th>
+      <th scope="col">Fornecedor</th>
+      <th scope="col">Valor</th>
+      <th scope="col">Emissão</th>
+    </tr>
+  </thead>
+   <tbody>
+ 
+{{#each lancamentos}}
+    <tr class="base">
+      <td>{{empresa}}</td>
+      <td>{{fornecedor.nome}}</td>
+      <td class="coin">{{valor}}</td>
+      <td>{{dateFormat emissao "DD/MM/YYYY"}}</td>
+    </tr>
+
+
 
 {{else}}
 
 <header class="postagem">
-<h5>Nenhum lançamento cadastrado</h5>
+<h1>Nenhum lançamento cadastrado</h1>
 <hr>
 
 {{/each}}
+</div>

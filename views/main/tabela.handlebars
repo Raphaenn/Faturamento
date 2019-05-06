@@ -95,5 +95,81 @@
 
 <section>
 
+<div class="sec2">
+  <div class="row mt-2">
+
+<div class="separador">
+  <div class="col">
+
+<iframe style="border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="640" height="480" 
+src="https://charts.mongodb.com/charts-painel-gerencial-rhhsm/embed/charts?id=8b629520-df51-4990-a6df-bb85bb38ace1&tenant=ec5351e2-76b6-456c-8b6b-39add59a8d0a"></iframe>
+  </div>
+</div>
+
+<div class="separador">
+  <div class="col">
+
+<div class="container">
+    <div class="card">
+        <h3 class="card-header" id="monthAndYear"></h3>
+        <table class="table table-bordered table-responsive-sm" id="calendar">
+            <thead>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+            </thead>
+
+            <tbody id="calendar-body">
+
+            </tbody>
+        </table>
+
+        <div class="form-inline">
+
+            <button class="btn btn-outline-primary col-sm-6" id="previous" onclick="previous()">Previous</button>
+
+            <button class="btn btn-outline-primary col-sm-6" id="next" onclick="next()">Next</button>
+        </div>
+        <br/>
+        <form class="form-inline">
+            <select class="form-control col-sm-4" name="month" id="month" onchange="jump()">
+                <option value=0>Jan</option>
+                <option value=1>Feb</option>
+                <option value=2>Mar</option>
+                <option value=3>Apr</option>
+                <option value=4>May</option>
+                <option value=5>Jun</option>
+                <option value=6>Jul</option>
+                <option value=7>Aug</option>
+                <option value=8>Sep</option>
+                <option value=9>Oct</option>
+                <option value=10>Nov</option>
+                <option value=11>Dec</option>
+            </select>
+
+
+            <label for="year"></label><select class="form-control col-sm-4" name="year" id="year" onchange="jump()">
+            <option value=2018>2018</option>
+            <option value=2019>2019</option>
+            <option value=2020>2020</option>
+            <option value=2021>2021</option>
+        </select></form>
+    </div>
+
+    <script src="/js/calendar.js"></script>
+
+</div>
+  
+  </div>
+</div>
+
+</div>
+</div>
 
 </section>

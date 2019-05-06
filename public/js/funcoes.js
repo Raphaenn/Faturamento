@@ -1,12 +1,13 @@
-
 // Função para somar envios dos fornecedores detalhados
-var table = document.getElementById("Fat_table"), sumVal = 0;
+var table = document.getElementById("Fat_table"),
+  sumVal = 0;
 
-  for (var i = 1; i < table.rows.length; i++) {
-    sumVal = sumVal + parseInt(table.rows[i].cells[6].innerHTML);
-  }
+for (var i = 1; i < table.rows.length; i++) {
+  sumVal = sumVal + parseInt(table.rows[i].cells[6].innerHTML);
+}
 
-document.getElementById("dinheiro").innerHTML = "R$ "+sumVal;
+document.getElementById("dinheiro").innerHTML = "R$ " + sumVal;
+
 
 
 // Calendário 

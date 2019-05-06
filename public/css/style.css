@@ -73,7 +73,7 @@
     margin: 0 2em 2em 2em;
 }
 
-.table {
+.table2 {
     text-align: center;
     width: 300%;
     color: black;
@@ -91,6 +91,12 @@
 
 .graficos {
     width: 95%; 
+    border: solid 0.1em rgba(197,202,233 ,0.3);
+    border-radius: .4em;
+}
+
+.graficos2 {
+    width: 40%; 
     border: solid 0.1em rgba(197,202,233 ,0.3);
     border-radius: .4em;
 }
@@ -149,3 +155,7 @@
     color: rgb(59, 56, 55);
 }
 
+.teste {
+    width: 10%;
+    margin: 0 1em 1em 1em;
+}

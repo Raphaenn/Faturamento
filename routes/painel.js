@@ -95,7 +95,7 @@ router.post("/geral/remover", function(req, res){
 
 //Rota para monstar lançamento a ser editado
 router.get("/lancamento/editar/:id", function(req, res){
-    Lancamento.findOne({_id: req.params.id}).then((lancamentos) =>{
+    Lancamento.findOne({_id: req.params.id}).populate("fornecedor").populate("natureza").then((lancamentos) =>{
         res.render("main/editlancamento", {lancamentos: lancamentos})
     }).catch((err) => {
         req.flash("error_msg", "Erro interno")
@@ -106,15 +106,23 @@ router.get("/lancamento/editar/:id", function(req, res){
 
 
 // Rota de teste
+router.get("/json", function(req, res) {
+    Lancamento.find().then(lancamentos => res.json({lancamentos: lancamentos}));
+});
+
+// Rota de teste
 router.get("/teste", function(req, res) {
-    Lancamento.find().populate("fornecedor").populate("natureza").sort({fornecedor:"asc"}).then((lancamentos) => {
-        res.render("main/teste", {lancamentos: lancamentos})
-    }).catch((err) => {
-        req.flash("error_msg", "Erro ao carregar teste")
-        res.redirect("/base/geral")
-    })
+    res.render("main/teste");
 });
 
 
 
 module.exports = router;
+
+
+/* Lancamento.find().populate("fornecedor").populate("natureza").sort({fornecedor:"asc"}).then((lancamentos) => {
+    res.render("main/tabela", {lancamentos: lancamentos})
+}).catch((err) => {
+    req.flash("error_msg", "Erro ao carregar tabelas")
+    res.redirect("/base/geral")
+}) */

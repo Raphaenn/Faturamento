@@ -7,34 +7,168 @@
 {{/each}}
 
 
-<div class="tabela">
-<table id="tabela" class="table table-hover mt-4">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Empresa</th>
-      <th scope="col">Fornecedor</th>
-      <th scope="col">Natureza</th>
-      <th scope="col">Tipo de OC</th>
-      <th scope="col">OC</th>
-      <th scope="col">NF/Invoice</th>
-      <th scope="col">Valor</th>
-      <th scope="col">Emissão</th>
-      <th scope="col">Competência</th>
-      <th scope="col">Justificativa</th>
-      <th scope="col">Centro de Custo</th>
-      <th scope="col">Únidade de Negócio</th>
-      <th scope="col">Prazo</th>
-      <th scope="col">Vencimento</th>
-      <th scope="col">Data de envio para pagamento</th>
-      <th scope="col">Data de recebimento</th>
-      <th scope="col">Responsável</th>
-      <th scope="col">N do Ticket</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div class="editar">
 
-    <tbody>
+    <div class="col-md-8 order-md-1">
+      <h2 class="mb-3">Cadastar lançamento</h2>
+      <form class="needs-validation" action="/base/enviar/novo" method="POST" >
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName">Empresa</label>
+            <input type="text" name="empresa" class="form-control" id="firstName" placeholder="" value="{{lancamentos.empresa}}" required>
+            <div class="invalid-feedback">
+              Valid first name is required.
+            </div>
+          </div>
+          <div class="col-md-5 mb-3">
+            <label for="country">Fornecedor</label>
+            <select class="custom-select d-block w-100" id="country" name="fornecedor" required>
+              {{#each fornecedores}}
+            <option value="{{_id}}">{{nome}}</option>
+        {{else}}
+            <option value="0">Nenhuma fornecedor registrado</option>
+        {{/each}}
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid country.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="username">Justificativa</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">@</span>
+            </div>
+            <input type="text" name="justificativa" class="form-control" id="username" required>
+            <div class="invalid-feedback" style="width: 100%;">
+              Natureza do serviço cadastrada no Oracle
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="address">Centro de Custo</label>
+          <input type="text" name="centro" class="form-control" id="address" placeholder="" required>
+          <div class="invalid-feedback">
+            Please enter your shipping address.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="address2">Unidade de negócio<span class="text-muted">(Optional)</span></label>
+          <input type="text" name="unidade" class="form-control" id="address2" placeholder="">
+        </div>
+
+        <div class="row">
+          <div class="col-md-5 mb-3">
+            <label for="country">Natureza</label>
+            <select class="custom-select d-block w-100" id="country" name="natureza" required>
+              {{#each naturezas}}
+            <option value="{{_id}}">{{nome}}</option>
+        {{else}}
+            <option value="0">Nenhuma natureza registrada</option>
+        {{/each}}
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid country.
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="state">Número da NF</label>
+              <input type="text" name="nota" class="form-control" id="state" required>
+            <div class="invalid-feedback">
+              Please provide a valid state.
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="zip">Número da OC</label>
+            <input type="text" name="ordem" class="form-control" id="zip" placeholder="" required>
+            <div class="invalid-feedback">
+              Número da OC required.
+            </div>
+          </div>
+        </div>
+        <hr class="mb-4">
+
+        <h4 class="mb-3">Responsável pelo envio</h4>
+
+        <div class="d-block my-3">
+          <div class="custom-control custom-radio">
+            <input id="credit" name="responsavel" value="Raphael" type="radio" class="custom-control-input" checked required>
+            <label class="custom-control-label" for="credit">Raphael Neves</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input id="debit" name="responsavel" value="Nathália" type="radio" class="custom-control-input" required>
+            <label class="custom-control-label" for="debit">Nathália Nogueria</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input id="paypal" name="responsavel" value="Frederico" type="radio" class="custom-control-input" required>
+            <label class="custom-control-label" for="paypal">Frederico Ceppas</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="cc-name">Data de Vencimento</label>
+            <input type="date" name="vencimento" class="form-control" id="cc-name" placeholder="" required>
+            <div class="invalid-feedback">
+              Name on card is required
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="cc-number">Data de Recebimento da NF</label>
+            <input type="date" name="recebimento" class="form-control" id="cc-number" placeholder="" required>
+            <div class="invalid-feedback">
+              Credit card number is required
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 mb-3">
+            <label for="cc-expiration">Valor(R$)</label>
+            <input type="currency" name="valor" class="form-control" id="cc-expiration" placeholder="" required>
+            <div class="invalid-feedback">
+              Expiration date required
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <label for="cc-expiration">Tipo de Ordem</label>
+            <input type="text" name="tipo" class="form-control" id="cc-expiration" placeholder="Blanket, Spot ou Global" required>
+            <div class="invalid-feedback">
+              Expiration date required
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <label for="cc-expiration">Ticket</label>
+            <input type="text" name="ticket" class="form-control" id="cc-expiration" placeholder="Número do ticket" required>
+            <div class="invalid-feedback">
+              Expiration date required
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <label for="cc-expiration">Data Emissão</label>
+            <input type="date" name="emissao" class="form-control" id="cc-expiration" placeholder="" required>
+            <div class="invalid-feedback">
+              Expiration date required
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <label for="cc-expiration">Competência</label>
+            <input type="test" name="competencia" class="form-control" id="cc-expiration" placeholder="" required>
+            <div class="invalid-feedback">
+              Expiration date required
+            </div>
+          </div>
+        </div>
+        <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Continue para enviar</button>
+      </form>
+    </div>
+</div>
+
+
+    {{!-- <tbody>
     <tr class="base">
       <td><input type="text" value="{{lancamentos.empresa}}"></td>
       <td><input type="text" value="{{lancamentos.fornecedor}}"></td>
@@ -54,4 +188,4 @@
       <td><input type="text" value="{{lancamentos.recebimento}}"></td>
       <td><input type="text" value="{{lancamentos.responsavel}}"></td>
       <td><input type="text" value="{{lancamentos.ticket}}"></td>
-      <td>
+      <td> --}}

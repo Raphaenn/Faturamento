@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+
 const Schema = mongoose.Schema;
 
 
@@ -94,4 +95,6 @@ const Schema = mongoose.Schema;
     }) 
 
 
-mongoose.model("lancamentos", Lancamento)
+const Lance = mongoose.model("lancamentos", Lancamento);
+
+module.exports = Lance;

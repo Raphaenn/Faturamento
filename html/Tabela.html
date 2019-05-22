@@ -1,0 +1,226 @@
+<h1 class="legenda">Detalhe Fornecedor</h1>
+
+<!-- PRIMEIRA PARTE DO DASHBOARD ********************************************************************************-->
+<header class="secao">
+
+<br>
+
+<!-- Divisão das colunas onde ficarão as informações dos fornecedores-->
+<div class="sec2">
+  <div class="row mt-4">
+
+<div class="separador">
+    <div class="col"><h3 class="fornecedor">{{fornecedor.nome}}</h3>
+    <hr>
+    <h5><i class="icon ion-md-square" style="color: rgb(22, 92, 22)"></i> Algar Telecom S.A</h5>
+    <P class="mt-3"><i class="icon ion-md-square" style="color: rgb(0, 109, 128)"></i> CNPJ: 934328429612319</P>
+    <P><i class="icon ion-md-at"></i><a href="mailto:raphaelnn@hotmail.com"> Email: raphaelnn@hotmail.com</a></P>
+    <P class="mt-3"><i class="icon ion-md-contact" style="color: rgb(0, 109, 128)"></i> Responsável: Lucas Rodrigues</P>
+    <p class="p-3 mb-2 bg-success text-white" style="border-radius: .2em; text-align: center;">Serviço ativo</p>
+
+    </div>
+</div>
+
+<div class="separador">
+    <div class="col">
+<!-- Card com soma de valores enviados-->
+<h3 class="fornecedor">Dados financeiros</h3>
+<hr>
+
+<div class="card flex-fill">
+		<div class="card-body py-4">
+			<div class="media">
+				<div class="d-inline-block mt-2 mr-3">
+					<i class="feather-lg text-info" data-feather="dollar-sign"></i>
+				</div>
+					<div class="media-body">
+						<h3 class="card-text" id="dinheiro"></h3>
+						<div class="sub-valores mb-0">Total faturado</div>
+					</div>
+			</div>
+		</div>
+
+<script>
+  feather.replace()
+</script>
+</div>
+<!-- Fim da caixa de soma de valores enviados-->
+    </div>
+</div>
+   <!-- <div class="w-100"></div>   ACRESCENTAR CASO QUERIA QUEBRAR OS CARDS EM DUAS LINHAS-->
+
+
+<div class="separador">
+    <div class="col">
+
+<!-- ******************************************************************************************************-->
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <h1>Titulo 1</h1>
+      <!-- Calendário entra aqui-->
+    </div>
+    <div class="carousel-item">
+      <h1>Titulo 2</h1>
+      <!-- Resumo entra aqui-->
+    </div>
+    <div class="carousel-item">
+      <h1>Titulo 3</h1>
+      <!-- Espaço vago entra aqui-->
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<!-- ******************************************************************************************************-->
+    </div>
+</div>
+
+
+<div class="separador">
+    <div class="col">
+      <div class="col"><h4 class="fornecedor">Últimos lançamentos</h4>
+    <hr>
+
+  
+  <div class="col">
+<div class="graficos">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+<canvas id="bar-chart" width="400" height="400"></canvas>
+<script>
+new Chart(document.getElementById("bar-chart"), {
+    type: 'bar',
+    data: {
+      labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"],
+      datasets: [
+        {
+          label: "Population (millions)",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: [2478,5267,734,784,433]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Predicted world population (millions) in 2050'
+      }
+    }
+});
+</script>
+
+
+</div>
+
+</div>
+</div>
+
+<script src="/js/funcoes.js"></script>
+</header>
+
+
+<!-- SEGUNDA PARTE DO DASHBOARD ********************************************************************************-->
+
+<section class="postagem">
+
+<div class="tabela">
+<table id="Fat_table" class="display">
+  <thead class="thead-dark">
+    <tr class="cabecalho">
+      <th scope="col">Empresa</th>
+      <th scope="col">Fornecedor</th>
+      <th scope="col">Natureza</th>
+      <th class="secundary" scope="col">Tipo de OC</th>
+      <th scope="col">OC</th>
+      <th scope="col">NF/Invoice</th>
+      <th scope="col">Valor</th>
+      <th scope="col">Emissão</th>
+      <th class="secundary" scope="col">Competência</th>
+      <th scope="col">Justificativa</th>
+      <th class="secundary" scope="col">Centro de Custo</th>
+      <th class="secundary" scope="col">Únidade de Negócio</th>
+      <th class="secundary" scope="col">Prazo</th>
+      <th scope="col">Vencimento</th>
+      <th scope="col">Data de envio para pagamento</th>
+      <th class="secundary" scope="col">Data de recebimento</th>
+      <th class="secundary" scope="col">Responsável</th>
+      <th scope="col">Nº do Ticket</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+    <tbody>
+
+{{#each lancamentos}}
+
+
+    <tr class="base">
+      <td>{{empresa}}</td>
+      <td>{{fornecedor.nome}}</td>
+      <td>{{natureza.nome}}</td>
+      <td class="secundary">{{tipo}}</td>
+      <td>{{ordem}}</td>
+      <td>{{nota}}</td>
+      <td class="coin">{{valor}}</td>
+      <td>{{dateFormat emissao "DD/MM/YYYY"}}</td>
+      <td class="secundary">{{competencia}}</td>
+      <td>{{justificativa}}</td>
+      <td class="secundary">{{centro}}</td>
+      <td class="secundary">{{unidade}}</td>
+      <td class="secundary">{{prazo}}</td>
+      <td>{{dateFormat vencimento "DD/MM/YYYY"}}</td>
+      <td>{{dateFormat date "DD/MM/YYYY"}}</td>
+      <td class="secundary">{{dateFormat recebimento "DD/MM/YYYY"}}</td>
+      <td class="secundary">{{responsavel}}</td>
+      <td>{{ticket}}</td>
+      <td>
+        <a href="/base/lancamento/editar/{{_id}}"><button class="btn btn-success"><i class="icon ion-md-create"></i></button></a>
+       </td>
+       <td>   
+          <form action="/base/geral/remover" method="POST">
+            <input type="hidden" name="id" value="{{_id}}">
+        <button type="submit" class="btn btn-danger"><i class="icon ion-md-trash"></i></button>
+        </form>
+      </td>
+    </tr>
+
+
+
+{{else}}
+
+<header class="postagem">
+<h5>Nenhum lançamento cadastrado</h5>
+<hr>
+
+{{/each}}
+
+<script src="/js/funcoes.js"></script>
+
+
+<script>
+
+  $(document).ready( function () {
+    $('#Fat_table').DataTable();
+});
+
+</script>
+
+
+</tbody>
+</table>
+</div>
+<hr>
+</section>

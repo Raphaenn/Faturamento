@@ -1,4 +1,16 @@
-var id = global.actuallUser._doc._id;
+
+ const mongoose = require("mongoose");
+
+db.lancamentos.aggregate(
+    [
+        {$match: {} },
+        {$group: {_id: "$competencia", total: {$sum: "$valor"}}}
+    ]
+)
+
+mongoose.model("fornecedores", Fornecedor); 
+
+/* var id = global.actuallUser._doc._id;
             id = id.toString();
             global.databaseStatistic.collection(global.ARTICLEPRESS).aggregate(
                     [
@@ -17,4 +29,4 @@ var id = global.actuallUser._doc._id;
                     ]
                     ).toArray(function (err, result) {
                 res.send(result);
-            });
+            }); */

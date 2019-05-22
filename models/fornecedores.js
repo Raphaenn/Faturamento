@@ -20,3 +20,6 @@ const Schema = mongoose.Schema;
     })
 
 mongoose.model("fornecedores", Fornecedor);
+
+
+

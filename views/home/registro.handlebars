@@ -6,10 +6,10 @@
   </div>
   <div class="card-body">
     
-    <form>
+    <form action="/registrar" method="POST">
         <div class="form-group">
     <label for="nome">Nome</label>
-    <input type="text" class="form-control" id="nome" placeholder="Nome do usuário" required>
+    <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome do usuário" required>
   </div>
 
 <label for="email">Email</label>
@@ -17,17 +17,17 @@
     <div class="input-group-prepend">
       <div class="input-group-text">@</div>
     </div>
-    <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Username" required>
+    <input type="text" class="form-control" name="email" id="inlineFormInputGroupUsername2" placeholder="E-mail" required>
   </div>
 
   <div class="form-group mt-3">
     <label for="exampleInputPassword1">Senha</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+    <input type="password" class="form-control" name="senha" id="exampleInputPassword1" placeholder="Password" required>
   </div>
 
   <div class="form-group">
     <label for="exampleInputPassword2">Confirme a senha</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+    <input type="password" class="form-control" name="senha2" id="exampleInputPassword1" placeholder="Password" required>
   </div>
   
   <button type="submit" class="btn btn-primary">Submit</button>
@@ -35,7 +35,11 @@
 
   </div>
   <div class="card-footer text-muted">
-    # Mensagens de Erro
+    {{#each erros}}
+      <div class="alert alert-danger"> {{texto}} </div>
+    {{else}}
+
+    {{/each}}
   </div>
 </div>
 

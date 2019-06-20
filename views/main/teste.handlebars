@@ -1,27 +1,76 @@
 <h1>Testando</h1>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+<script src="/js/graficos.js"></script>
+<div id="objetoJson" style="position:relative"></div>
+<br><br><br>
 
-<div id="objetoJson"></div>
+<div id="filtro" style="position:relative">
 
+<p class="titulo">Gráfico de testes</p>
+</div>
+
+<section>
+<div class="colagem"></div>
+<div class="containerr">
+<canvas id="ChartMes" width="400" height="400"></canvas>
+</div>
+</section>
+{{!-- 
+<script>
+
+ var Object2 = $.getJSON("http://localhost:3000/base/json", function(data) {
+
+    var filtrados = data.lancamentos.filter(function(lancamentos) {
+    var preco = Number(lancamentos.valor);
+    return preco > 1000 && preco < 10000;
+    });
+
+     console.log(filtrados);
+
+    var filtro2 = data.lancamentos.filter((lancamentos) => {
+        var opa = String(lancamentos.responsavel)
+        return lancamentos.responsavel == 'Frederico';
+    })
+
+    console.log(filtro2);
+
+
+ });
+
+</script>
 
 <script>
 
+    var Object3 = $.getJSON("http://localhost:3000/base/json", function(data) {
 
-   var object = $.getJSON("http://localhost:3000/base/json", function(data) {
-     console.log(data);
-     console.log(data.lancamentos);
-     
+        var arrC = [];
 
-     var myJSON = JSON.stringify(data);
-      $("#objetoJson").text(myJSON);
+        var novo = $.each(data.lancamentos, function(index, value) {
+        if(value.competencia == "Maio") {
+            
+            arrC.push(value.competencia);
+            return
+        };
+        
+    })
+        console.log(arrC);
 
-    });
+        var arrF = [];
 
-    console.log("Requisiçao retornada");
+        var novoArr = $.each(data.lancamentos, function(index, value) {
+            if(value.valor) {
+                arrF.push(value.valor)
+                return
+            }
+        });
+        console.log(arrF);
+ });
 
-    
+
+</script> --}}
 
 
-</script>
 
 
 {{!-- var vPool="";

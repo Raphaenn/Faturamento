@@ -7,20 +7,208 @@
 
 <form action="/admin/fornecedor/novo" class="formulario" method="POST" >
 
-  <div class="form-group">
-    <label>Nome</label>
-    <input type="text" name="nome" id="nome" class="form-control" placeholder="Digite seu Nome">
-  </div>
-  <div class="form-group">
-    <label>Localidade:</label>
-    <input type="text" name="localidade" id="localidade" class="form-control" placeholder="Digite aqui">
-  </div>
-  <div class="form-group">
-    <label>CNPJ:</label>
-    <input type="text" name="cnpj" id="cnpj" class="form-control" placeholder="Digite aqui">
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="firstName">Empresa</label>
+            <input type="text" name="empresa" class="form-control" id="firstName" placeholder="" value="" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+        <div class="col-md-4 mb-3">
+            <label for="firstName">Razão Social</label>
+            <input type="text" name="Razão" class="form-control" id="firstName" placeholder="" value="" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="firstName">Nome Fantasia</label>
+            <input type="text" name="nome" class="form-control" id="firstName" placeholder="" value="" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+        </div>
+{{!-------------------------------------------------  Nomeclaturas  --------------------------------------------}}
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="firstName">CNPJ</label>
+            <input type="text" name="empresa" class="form-control" id="cnpj" placeholder="" value="" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+        <div class="col-md-4 mb-3">
+            <label for="firstName">CEP</label>
+            <input type="text" name="Razão" class="form-control" id="cep" placeholder="" value="" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="firstName">Telefone</label>
+            <input type="tel" name="nome" class="form-control" id="phoneNumber" value="" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+        </div>
+{{!-------------------------------------------------  Dados numéricos  --------------------------------------------}}
+        <div class="row">
+          <div class="col-md-3 mb-3">
+            <label for="firstName">Pessoa Chave</label>
+            <input type="text" name="empresa" class="form-control" id="firstName" placeholder="" value="" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+         <div class="col-md-5 mb">
+          <label for="username">Email de contato</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">@</span>
+            </div>
+            <input type="text" name="justificativa" class="form-control" id="username" required>
+            <div class="invalid-feedback" style="width: 100%;">
+            </div>
+          </div>
+         </div>
+         <div class="col-md-4 mb-3">
+          <label for="username">Portal</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="material-icons">computer</i></span>
+            </div>
+            <input type="text" name="justificativa" class="form-control" id="username" required>
+            <div class="invalid-feedback" style="width: 100%;">
+            </div>
+          </div>
+         </div>
+        </div>
+        <hr class="mb-4">
+{{!----------------------------------------------  Definições dos seviços prestados  --------------------------------------------}}
+        <div class="mb-3">
+          <label for="address">Serviço</label>
+          <div class="input-group">
+            <div class="input-group-prepend" id="add">
+              <a href=""><span class="input-group-text"><i class="material-icons">add</i></span></a>
+            </div>
+            <input type="text" name="servico" class="form-control" id="username" required>
+            <div class="invalid-feedback" style="width: 100%;">
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3" id="reserva">
+          <label for="address2">Serviço 2 <span class="text-muted">(Optional)</span></label>
+          <input type="text" name="unidade" class="form-control" id="address2" placeholder="">
+        </div>
+
+        <div class="mb-3" id="reserva">
+          <label for="address2">Serviço 3 <span class="text-muted">(Optional)</span></label>
+          <input type="text" name="unidade" class="form-control" id="address2" placeholder="">
+        </div>
+
+        <div class="mb-3" id="reserva">
+          <label for="address2">Serviço 4 <span class="text-muted">(Optional)</span></label>
+          <input type="text" name="unidade" class="form-control" id="address2" placeholder="">
+        </div>
+
+        <div class="mb-3" id="reserva">
+          <label for="address2">Serviço 5 <span class="text-muted">(Optional)</span></label>
+          <input type="text" name="unidade" class="form-control" id="address2" placeholder="">
+        </div>
+
+        <div class="row">
+          <div class="col-md-3 mb-3">
+            <label for="state">Número do contrato</label>
+              <input type="text" name="nota" class="form-control" id="state" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="state">Data de inicio</label>
+              <input type="text" name="nota" class="form-control" id="dataformat" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="state">Data Fim</label>
+            <input type="text" name="ordem" class="form-control" id="dataformat" placeholder="" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+             <label for="state">Status</label>
+            <input type="text" name="ordem" class="form-control" id="dataformat" placeholder="" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+        </div>
+        <hr class="mb-4">
+{{!----------------------------------------------  Dados financeiros  --------------------------------------------}}
+        <h4 class="mb-4">Dados financeiros</h4>
+        <div class="row">
+          <div class="col-md-3 mb-3">
+            <label for="cc-name">Valor do contrato</label>
+            <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="material-icons">attach_money</i></span>
+            </div>
+            <input type="text" name="valorContrato" class="form-control" id="valorContrato" required>
+          </div>
+          </div>
+           <div class="col-md-3 mb-3">
+            <label for="cc-name">Valor do mensal</label>
+            <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="material-icons">attach_money</i></span>
+            </div>
+            <input type="text" name="valorContrato" class="form-control" id="valorContrato" required>
+          </div>
+          </div>
+           <div class="custom-control custom-radio" style="padding: 2em">
+            <input id="credit" name="responsavel" value="Raphael" type="radio" class="custom-control-input" checked required>
+            <label class="custom-control-label" for="credit">Real</label>
+          </div>
+          <div class="custom-control custom-radio" style="padding: 2em 1em 2em 1em">
+            <input id="debit" name="responsavel" value="Nathália" type="radio" class="custom-control-input" required>
+            <label class="custom-control-label" for="debit">Dólar</label>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-md-3 mb-3">
+            <label for="cc-expiration">Recorrência</label>
+            <input type="currency" name="valor" class="form-control" id="cc-expiration" required>
+          </div>
+          <div class="col-md-3 mb-4">
+            <label for="cc-expiration">Dia de faturamento</label>
+            <input type="text" name="tipo" class="form-control" id="cc-expiration"  required>
+            <div class="invalid-feedback">
+              Expiration date required
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <label for="cc-expiration">Dia de vencimento</label>
+            <input type="text" name="ticket" class="form-control" id="cc-expiration"  required>
+            <div class="invalid-feedback">
+              Expiration date required
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <label for="cc-expiration">Competência Inicio</label>
+            <input type="date" name="emissao" class="form-control" id="cc-expiration" required>
+            <div class="invalid-feedback">
+              Expiration date required
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <label for="cc-expiration">Competência Fim</label>
+            <input type="date" name="competencia" class="form-control" id="cc-expiration" required>
+            <div class="invalid-feedback">
+              Expiration date required
+            </div>
+          </div>
+        </div>
+        <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Continue para enviar</button>
+        <br>
 
 </form>
-
+<script src="/js/matrizF.js"></script>
 </div>

@@ -1,27 +1,28 @@
-<div class="categorias">
-<h2>Lista de fornecedores </h2>
+<div class="padrao">
+<h1 class="legenda">Lista de fornecedores </h1>
 <hr>
 
 <a href="/admin/addfornecedor" style="position:relative"><button class="btn btn-success">Novo fornecedor</button></a>
 </div>
 
 <div class="album py-5">
-<div class="container">
+<div class="padrao">
 <div class="row">
 
 {{#each fornecedores}}
 
-<div class="col-md-4">
-<div class="card mb-4" style="width: 18rem;">
-  <div class="card-body text-white bg-success">
-    <h3 class="card-title text-white bg-success mb-3">{{nome}}</h3>
-    <p class="card-text">CNPJ: {{cnpj}}</p>
+<div class="col-md-3">
+<div class="card mb-3" style="width: 18rem;">
+  <div class="card-body" style="background-color: rgb(78, 196, 131); color:aliceblue">
+    <h3 class="card-title" style="background-color: rgb(78, 196, 131);">{{nome}}</h3>
+    <p class="card-text" style="color:aliceblue">CNPJ: {{cnpj}}</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item active list-group-item-action list-group-item-secondary">Status de envios</li>
+    <li class="list-group-item" style="background-color: #C1C8E4">Status de envios</li>
+    <li class="list-group-item">Janeiro: 31/01/2019</li>
     <li class="list-group-item">Fevereiro: Pendente</li>
-    <li class="list-group-item">Janeiro: 01/01/2019</li>
-    <li class="list-group-item">Dezembro: 30/12/2019</li>
+    <li class="list-group-item">Março: 01/03/2019</li>
+    <li class="list-group-item">Abril: 30/04/2019</li>
   </ul>
   <div class="d-flex justify-content-between align-items-center">
     <a href="/admin/fornecedores/{{nome}}" class="card-link" style="margin-left: 4em;"><button class="btn btn-info">Detalhe</button></a>

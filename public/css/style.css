@@ -1,3 +1,7 @@
+.padrao {
+    width: 80%;
+    margin: 0 auto;
+}
 .containerr {
     width: 40%;
 }
@@ -32,13 +36,9 @@
     margin: 0 auto;
 }
 
-.addcategorias {
-    width: 40%; 
-    margin: 0 auto;
-}
 
 .addcategorias {
-    width: 40%; 
+    width:70%; 
     margin: 0 auto;
 }
 
@@ -160,6 +160,10 @@
     margin: 0 1em 1em 1em;
 }
 
+#reserva{
+    display: none;
+}
+
 
 
 /* Nav bar config*/  
@@ -252,7 +256,7 @@ a:focus {
 
 #dismiss:hover {
     background: #fff;
-    color: #7386D5;
+    color: rgb(199, 203, 219);
 }
 
 .overlay {
@@ -355,4 +359,10 @@ a.article:hover {
     position: absolute;
     top: 0;
     right: 0;
-}
+};
+
+
+
+/* ---------------------------------------------------
+    FORMULÁRIO CADASTRO DE FORNECEDOR
+----------------------------------------------------- */

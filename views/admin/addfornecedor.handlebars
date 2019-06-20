@@ -3,10 +3,11 @@
 {{else}}
 
 {{/each}}
-<div class="addcategorias">
+<div class="addfornecedor">
 
 <form action="/admin/fornecedor/novo" class="formulario" method="POST" >
-
+{{!-------------------------------------------------  Parte 1  --------------------------------------------}}
+<div class="pt1" id="parteA">
   <div class="row">
           <div class="col-md-4 mb-3">
             <label for="firstName">Empresa</label>
@@ -26,7 +27,7 @@
             <div class="invalid-feedback">
             </div>
           </div>
-        </div>
+        </div> <br>
 {{!-------------------------------------------------  Nomeclaturas  --------------------------------------------}}
         <div class="row">
           <div class="col-md-4 mb-3">
@@ -47,7 +48,7 @@
             <div class="invalid-feedback">
             </div>
           </div>
-        </div>
+        </div> <br>
 {{!-------------------------------------------------  Dados numéricos  --------------------------------------------}}
         <div class="row">
           <div class="col-md-3 mb-3">
@@ -79,8 +80,10 @@
           </div>
          </div>
         </div>
-        <hr class="mb-4">
+        <hr class="mb-2">
+</div>
 {{!----------------------------------------------  Definições dos seviços prestados  --------------------------------------------}}
+<div class="pt3" id="parteB">
         <div class="mb-3">
           <label for="address">Serviço</label>
           <div class="input-group">
@@ -91,29 +94,7 @@
             <div class="invalid-feedback" style="width: 100%;">
             </div>
           </div>
-        </div>
-
-        <div class="mb-3" id="reserva">
-          <label for="address2">Serviço 2 <span class="text-muted">(Optional)</span></label>
-          <input type="text" name="unidade" class="form-control" id="address2" placeholder="">
-        </div>
-
-        <div class="mb-3" id="reserva">
-          <label for="address2">Serviço 3 <span class="text-muted">(Optional)</span></label>
-          <input type="text" name="unidade" class="form-control" id="address2" placeholder="">
-        </div>
-
-        <div class="mb-3" id="reserva">
-          <label for="address2">Serviço 4 <span class="text-muted">(Optional)</span></label>
-          <input type="text" name="unidade" class="form-control" id="address2" placeholder="">
-        </div>
-
-        <div class="mb-3" id="reserva">
-          <label for="address2">Serviço 5 <span class="text-muted">(Optional)</span></label>
-          <input type="text" name="unidade" class="form-control" id="address2" placeholder="">
-        </div>
-
-        <div class="row">
+          <div class="row">
           <div class="col-md-3 mb-3">
             <label for="state">Número do contrato</label>
               <input type="text" name="nota" class="form-control" id="state" required>
@@ -139,8 +120,135 @@
             </div>
           </div>
         </div>
+        </div>
+
+        <div class="mb-3" id="reserva">
+          <label for="address2">Serviço 2 <span class="text-muted">(Optional)</span></label>
+          <input type="text" name="unidade" class="form-control" id="address2" placeholder="">
+          <div class="row">
+          <div class="col-md-3 mb-3">
+            <label for="state">Número do contrato</label>
+              <input type="text" name="nota" class="form-control" id="state" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="state">Data de inicio</label>
+              <input type="text" name="nota" class="form-control" id="dataformat" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="state">Data Fim</label>
+            <input type="text" name="ordem" class="form-control" id="dataformat" placeholder="" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+             <label for="state">Status</label>
+            <input type="text" name="ordem" class="form-control" id="dataformat" placeholder="" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="mb-3" id="reserva">
+          <label for="address2">Serviço 3 <span class="text-muted">(Optional)</span></label>
+          <input type="text" name="unidade" class="form-control" id="address2" placeholder="">
+          <div class="row">
+          <div class="col-md-3 mb-3">
+            <label for="state">Número do contrato</label>
+              <input type="text" name="nota" class="form-control" id="state" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="state">Data de inicio</label>
+              <input type="text" name="nota" class="form-control" id="dataformat" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="state">Data Fim</label>
+            <input type="text" name="ordem" class="form-control" id="dataformat" placeholder="" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+             <label for="state">Status</label>
+            <input type="text" name="ordem" class="form-control" id="dataformat" placeholder="" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="mb-3" id="reserva">
+          <label for="address2">Serviço 4 <span class="text-muted">(Optional)</span></label>
+          <input type="text" name="unidade" class="form-control" id="address2" placeholder="">
+          <div class="row">
+          <div class="col-md-3 mb-3">
+            <label for="state">Número do contrato</label>
+              <input type="text" name="nota" class="form-control" id="state" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="state">Data de inicio</label>
+              <input type="text" name="nota" class="form-control" id="dataformat" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="state">Data Fim</label>
+            <input type="text" name="ordem" class="form-control" id="dataformat" placeholder="" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+             <label for="state">Status</label>
+            <input type="text" name="ordem" class="form-control" id="dataformat" placeholder="" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="mb-3" id="reserva">
+          <label for="address2">Serviço 5 <span class="text-muted">(Optional)</span></label>
+          <input type="text" name="unidade" class="form-control" id="address2" placeholder="">
+          <div class="row">
+          <div class="col-md-3 mb-3">
+            <label for="state">Número do contrato</label>
+              <input type="text" name="nota" class="form-control" id="state" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="state">Data de inicio</label>
+              <input type="text" name="nota" class="form-control" id="dataformat" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="state">Data Fim</label>
+            <input type="text" name="ordem" class="form-control" id="dataformat" placeholder="" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+             <label for="state">Status</label>
+            <input type="text" name="ordem" class="form-control" id="dataformat" placeholder="" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+        </div>
+        </div>
         <hr class="mb-4">
+</div>
 {{!----------------------------------------------  Dados financeiros  --------------------------------------------}}
+<div class="pt4" id="parteC">
         <h4 class="mb-4">Dados financeiros</h4>
         <div class="row">
           <div class="col-md-3 mb-3">
@@ -208,7 +316,13 @@
         <hr class="mb-4">
         <button class="btn btn-primary btn-lg btn-block" type="submit">Continue para enviar</button>
         <br>
-
+</div>
+  <nav aria-label="Page navigation example" style="float: right">
+   <ul class="pagination">
+    <li class="page-item"><button class="page-link" id="voltar">Voltar</button></li>
+    <li class="page-item"><button class="page-link" id="proximo">Próximo</button></li>
+  </ul>
+</nav>
 </form>
 <script src="/js/matrizF.js"></script>
 </div>

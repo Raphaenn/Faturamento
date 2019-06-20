@@ -359,10 +359,38 @@ a.article:hover {
     position: absolute;
     top: 0;
     right: 0;
-};
-
-
+}
 
 /* ---------------------------------------------------
     FORMULÁRIO CADASTRO DE FORNECEDOR
 ----------------------------------------------------- */
+
+.addfornecedor {
+    width:70%; 
+    margin: 0 auto;
+}
+
+
+
+.pt1 {
+	background-color: rgb(222, 226, 236, .6);
+	text-align: left;
+	padding: 4em;
+    border-radius: 4px;
+    display: block;
+    width: 100%; 
+    margin: 0 auto;
+}
+
+.pt3 {
+    display: none;
+}
+
+.pt4 {
+    display: none;
+}
+
+
+label {
+    font-family: 'Lato', sans-serif;
+}

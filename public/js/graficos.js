@@ -43,7 +43,7 @@ function graficos() {
             label[entry] = label[entry].reduce((acc, num) => acc + num);
             $(".colagem").text(JSON.stringify(label));
         };
-        var valores = Object.values(label);
+        var valores = Object.values(label).sort();
         console.log(valores);
 
         // Construir gráfico correto

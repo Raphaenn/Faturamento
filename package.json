@@ -12,7 +12,7 @@
     "feather-icons": "^4.21.0",
     "handlebars-dateformat": "^1.1.1",
     "moment": "^2.24.0",
-    "mongoose": "^5.4.8",
+    "mongoose": "^5.7.5",
     "nodemon": "^1.18.8"
   },
   "devDependencies": {},
